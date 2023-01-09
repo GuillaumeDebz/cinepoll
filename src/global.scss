@@ -1,3 +1,14 @@
+// POLICE //
+@font-face {
+    font-family: 'FullPack2025';
+    src: url('./assets/fonts/FullPack2025.ttf') format('OpenType');
+  };
+
+  :not(h1){
+    font-family: Arial, Helvetica, sans-serif;
+  };
+
+
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------

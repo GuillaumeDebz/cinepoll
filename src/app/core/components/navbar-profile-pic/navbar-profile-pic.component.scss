@@ -1,0 +1,28 @@
+// BANNIERE  //
+.banniere {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2CACDC ;
+}
+
+// LOGO //
+.banniere img {
+    height: 7vh;
+    margin-left: 2vh;
+}
+
+// CINEPOLL //
+.cinepoll {
+    color: white;
+    font-size: 3vh;
+}
+
+// ARROW //
+.profilePic {
+    height: 7vh;
+    width: 4vh;
+    color: white;
+    margin-right: 2vh;
+}

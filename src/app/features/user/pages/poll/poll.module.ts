@@ -8,6 +8,9 @@ import { PollPageRoutingModule } from './poll-routing.module';
 
 import { PollPage } from './poll.page';
 
+// COMPONENT //
+import { NavbarProfilePicComponent } from 'src/app/core/components/navbar-profile-pic/navbar-profile-pic.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +18,9 @@ import { PollPage } from './poll.page';
     IonicModule,
     PollPageRoutingModule
   ],
-  declarations: [PollPage]
+  declarations: [
+    PollPage,
+    NavbarProfilePicComponent
+  ]
 })
 export class PollPageModule {}

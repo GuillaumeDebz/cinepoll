@@ -3,5 +3,48 @@
 </ion-header>
 
 <ion-content>
+  <div class="content-inner">
 
+
+    <!-- FORM  -->
+    <form class="formAuth">
+      <ion-list>
+
+        <!-- EMAIL  -->
+        <ion-item>
+          <ion-input placeholder="Adresse email"></ion-input>
+        </ion-item>
+
+        <!-- PSEUDO  -->
+        <ion-item>
+          <ion-input placeholder="Pseudo"></ion-input>
+        </ion-item>
+
+        <!-- MOT DE PASSE  -->
+        <ion-item>
+          <ion-input placeholder="Mot de passe"></ion-input>
+        </ion-item>
+
+        <!-- CONFIRMER MOT DE PASSE  -->
+        <ion-item>
+          <ion-input placeholder="Confirmer Mot de passe"></ion-input>
+        </ion-item>
+
+        <!-- IMPORTER PHOTO  -->
+        <ion-item>
+          <ion-icon class="importPic" name="duplicate-outline"></ion-icon>
+          <p class="importText"> Importer une photo </p>
+        </ion-item>
+
+      </ion-list>
+    </form>
+
+
+    <!-- BOUTON CREER COMPTE  -->
+    <div class="creerCompte">
+      <ion-button class="buttonCreerCompte" (click)="creerCompte()"> Créer un compte </ion-button>
+    </div>
+
+
+  </div>
 </ion-content>

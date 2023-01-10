@@ -1,0 +1,23 @@
+// FOOTER  //
+.footer {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2CACDC;
+}
+
+// ICONES //
+ion-icon {
+    height: 7vh;
+    width: 4vh;
+    color: white;
+}
+
+.stats {
+    margin-left: 2vh;
+}
+
+.friends {
+    margin-right: 2vh;
+}

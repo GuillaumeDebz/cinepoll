@@ -8,8 +8,10 @@ import { PollPageRoutingModule } from './poll-routing.module';
 
 import { PollPage } from './poll.page';
 
-// COMPONENT //
+// COMPONENTS //
 import { NavbarProfilePicComponent } from 'src/app/core/components/navbar-profile-pic/navbar-profile-pic.component';
+import { FooterComponent } from 'src/app/core/components/footer/footer.component';
+
 
 @NgModule({
   imports: [
@@ -20,7 +22,8 @@ import { NavbarProfilePicComponent } from 'src/app/core/components/navbar-profil
   ],
   declarations: [
     PollPage,
-    NavbarProfilePicComponent
+    NavbarProfilePicComponent,
+    FooterComponent
   ]
 })
 export class PollPageModule {}

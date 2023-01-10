@@ -1,0 +1,26 @@
+// BANNIERE  //
+.banniere {
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: #2CACDC ;
+}
+
+// LOGO //
+.banniere img {
+    margin-top: 0.5vh;
+    height: 7vh;
+}
+
+// CINEPOLL //
+.cinepoll {
+    color: white;
+}
+
+// ARROW //
+.backArrow {
+    height: 7vh;
+    width: 4vh;
+    color: white;
+    
+}

@@ -23,7 +23,7 @@
 
         <!-- CONNEXION  -->
         <ion-item>
-          <ion-button class="buttonConnexion">Se connecter</ion-button>
+          <ion-button class="buttonConnexion" (click)="checkConnection()">Se connecter</ion-button>
         </ion-item>
 
       </ion-list>
@@ -33,7 +33,7 @@
     <!-- CREER COMPTE  -->
     <div class="creerCompte">
       <p class="noAccount"> Pas encore de compte? </p>
-      <ion-button class="buttonCreerCompte"> Créer un compte </ion-button>
+      <ion-button class="buttonCreerCompte" (click)="creerCompte()"> Créer un compte </ion-button>
     </div>
 
 

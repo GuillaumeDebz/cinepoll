@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-authentification',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthentificationPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-  }
+  };
+
+  // CONNEXION  //
+  checkConnection() {
+
+    this.router.navigate(['user']);
+  };
+
+
+  // CREER NOUVEAU COMPTE  //
+  creerCompte(){
+    this.router.navigate(['newAccount']);
+  };
 
 }

@@ -1,0 +1,77 @@
+// PAGE //
+.content-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+// BANNIERE  //
+.banniere, .banniere img {
+    height: 17vh;
+    display: flex;
+    justify-content: center;
+    background-color: #2CACDC ;
+}
+
+.banniere img {
+    margin-top: 0.5vh;
+    height: 16vh;
+}
+
+
+// FORM  //
+.formAuth {
+    display: flex;
+    justify-content: center;
+}
+
+ion-item {
+    margin-top: 4vh;
+    --border-style: none;
+}
+
+ion-input {
+    height: 10vh;
+    width: 38vh;
+    font-size: 4vh;
+    text-align: center;
+    border: 1px solid #53D2F2;
+}
+
+.buttonConnexion {
+    height: 8vh;
+    width: 30vh;
+    font-size: 3.5vh;
+    font-weight: bold;
+    text-transform: none;    // Enlever le uppercase
+    --border-radius: 5%;
+    --background: #2CACDC;
+    margin: auto;
+}
+
+
+// CREER COMPTE //
+.creerCompte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.noAccount{
+    margin: auto;
+    margin-bottom: 1vh;
+    font-size: 2.5vh;
+}
+
+.buttonCreerCompte {
+    --background: #53D2F2;
+    height: 8vh;
+    width: 38vh;
+    font-size: 4vh;
+    font-weight: bold;
+    text-transform: none;    // Enlever le uppercase
+    --border-radius: 5%;
+}

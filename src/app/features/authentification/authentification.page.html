@@ -1,9 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>authentification</ion-title>
-  </ion-toolbar>
+<!-- BANNIERE  -->
+<ion-header class="banniere">
+  <img src="./assets/icon/CINEPOLL_Logo.png" alt="CINEPOLL_Logo">
 </ion-header>
 
 <ion-content>
+  <div class="content-inner">
 
+    
+    <!-- FORM  -->
+    <form class="formAuth">
+      <ion-list>
+
+        <!-- EMAIL  -->
+        <ion-item>
+          <ion-input placeholder="Adresse email"></ion-input>
+        </ion-item>
+
+        <!-- MOT DE PASSE  -->
+        <ion-item>
+          <ion-input placeholder="Mot de passe"></ion-input>
+        </ion-item>
+
+        <!-- CONNEXION  -->
+        <ion-item>
+          <ion-button class="buttonConnexion">Se connecter</ion-button>
+        </ion-item>
+
+      </ion-list>
+    </form>
+
+
+    <!-- CREER COMPTE  -->
+    <div class="creerCompte">
+      <p class="noAccount"> Pas encore de compte? </p>
+      <ion-button class="buttonCreerCompte"> Créer un compte </ion-button>
+    </div>
+
+
+  </div>
 </ion-content>

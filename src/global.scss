@@ -4,9 +4,13 @@
     src: url('./assets/fonts/FullPack2025.ttf') format('OpenType');
   };
 
-  :not(h1){
-    font-family: Arial, Helvetica, sans-serif;
-  };
+h1 {
+  font-family: 'FullPack2025';
+};
+
+:not(h1){
+  font-family: Arial, Helvetica, sans-serif;
+};
 
 
 /*

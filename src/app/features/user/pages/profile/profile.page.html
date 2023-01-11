@@ -1,9 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
+  <app-navbar-arrow> </app-navbar-arrow>
 </ion-header>
 
 <ion-content>
+  <div class="content-inner">
 
+
+    <!-- FORM  -->
+    <form class="formAuth">
+      <ion-list>
+
+        <!-- EMAIL  -->
+        <ion-item>
+          <ion-input placeholder="Adresse email"></ion-input>
+        </ion-item>
+
+        <!-- PSEUDO  -->
+        <ion-item>
+          <ion-input placeholder="Pseudo"></ion-input>
+        </ion-item>
+
+        <!-- MOT DE PASSE  -->
+        <ion-item>
+          <ion-input placeholder="Mot de passe"></ion-input>
+        </ion-item>
+
+        <!-- CHANGER PHOTO  -->
+        <ion-item>
+          <ion-icon class="changePic" name="duplicate-outline"></ion-icon>
+          <p class="importText"> Changer la photo de profil </p>
+        </ion-item>
+
+        <!-- CONFIRMER LES CHANGEMENTS  -->
+        <ion-item class="confirmChange" (click)="confirmChange()">
+          <ion-button class="buttonConfirmer"> Confirmer les changements </ion-button>
+        </ion-item>
+
+      </ion-list>
+    </form>
+
+
+    <!-- DECONNEXION  -->
+    <div class="deconnexion">
+      <ion-button class="buttondeconnexion" (click)="deconnexion()"> Déconnexion </ion-button>
+    </div>
+
+
+  </div>
 </ion-content>

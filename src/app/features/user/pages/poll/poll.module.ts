@@ -9,8 +9,7 @@ import { PollPageRoutingModule } from './poll-routing.module';
 import { PollPage } from './poll.page';
 
 // COMPONENTS //
-import { NavbarProfilePicComponent } from 'src/app/core/components/navbar-profile-pic/navbar-profile-pic.component';
-import { FooterComponent } from 'src/app/core/components/footer/footer.component';
+import { ComponentsModule } from 'src/app/core/components/components.module';
 
 
 @NgModule({
@@ -18,12 +17,11 @@ import { FooterComponent } from 'src/app/core/components/footer/footer.component
     CommonModule,
     FormsModule,
     IonicModule,
-    PollPageRoutingModule
-  ],
+    PollPageRoutingModule,
+    ComponentsModule
+    ],
   declarations: [
     PollPage,
-    NavbarProfilePicComponent,
-    FooterComponent
   ]
 })
 export class PollPageModule {}

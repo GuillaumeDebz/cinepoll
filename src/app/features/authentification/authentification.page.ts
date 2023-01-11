@@ -16,7 +16,6 @@ export class AuthentificationPage implements OnInit {
 
   // CONNEXION  //
   checkConnection() {
-
     this.router.navigate(['user']);
   };
 

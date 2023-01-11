@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-profile-pic',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarProfilePicComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  // PROFILE  //
+  goToProfile() {
+    this.router.navigate(['user/profile']);
+  };
 
 }

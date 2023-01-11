@@ -8,19 +8,18 @@ import { NewAccountPageRoutingModule } from './new-account-routing.module';
 import { NewAccountPage } from './new-account.page';
 
 // COMPONENTS //
-import { NavbarArrowComponent } from '../../core/components/navbar-arrow/navbar-arrow.component';
-
+import { ComponentsModule } from 'src/app/core/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NewAccountPageRoutingModule
+    NewAccountPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [
-    NewAccountPage,
-    NavbarArrowComponent
+    NewAccountPage
   ]
 })
 export class NewAccountPageModule {}

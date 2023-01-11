@@ -1,0 +1,72 @@
+// PAGE //
+.content-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+// FORM  //
+.formAuth {
+    display: flex;
+    justify-content: center;
+}
+
+ion-item {
+    margin-top: 4vh;
+    --border-style: none;
+}
+
+ion-input {
+    height: 10vh;
+    width: 38vh;
+    font-size: 3vh;
+    text-align: center;
+    border: 1px solid #53D2F2;
+}
+
+.confirmChange {
+    margin-top: 1vh;
+}
+
+.changePic {
+    color: black;
+    height: 5vh;
+    width: 5vh;
+    margin-right: 3vh;
+}
+
+.importText {
+    font-size: 3vh;
+}
+
+.buttonConfirmer {
+    --background: #2CACDC;
+    height: 8vh;
+    width: 32vh;
+    margin: auto;
+    font-size: 2vh;
+    font-weight: bold;
+    text-transform: none;    // Enlever le uppercase
+    --border-radius: 5%;
+}
+
+
+// DECONNEXION //
+.deconnexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.buttondeconnexion {
+    --background: red;
+    height: 8vh;
+    width: 20vh;
+    font-size: 2vh;
+    font-weight: bold;
+    text-transform: none;    // Enlever le uppercase
+    --border-radius: 5%;
+}

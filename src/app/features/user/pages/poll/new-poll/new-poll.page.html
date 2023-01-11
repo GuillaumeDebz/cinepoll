@@ -1,0 +1,44 @@
+<ion-header>
+  <app-navbar-arrow> </app-navbar-arrow>
+</ion-header>
+
+<ion-content>
+  <div class="content-inner">
+
+
+    <!-- FORM  -->
+    <form class="formNewPoll">
+
+      <ion-list>
+        <!-- NOUVEAU SONDAGE  -->
+        <ion-item class="newPollTitleItem">
+          <h2 class="newPollText"> Nouveau sondage </h2>
+        </ion-item>
+
+        <!-- PSEUDO  -->
+        <ion-item>
+          <ion-input placeholder="Genre"></ion-input>
+        </ion-item>
+
+        <!-- COMMENTAIRE  -->
+        <ion-item>
+          <ion-input placeholder="Commentaire"></ion-input>
+        </ion-item>
+
+        <!-- FILMS/SERIES A EXCLURE  -->
+        <ion-item>
+          <ion-input placeholder="Films/Séries à exclure"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </form>
+
+
+    <!-- BOUTON CREER SONDAGE  -->
+    <div class="createNewPoll">
+      <ion-button class="buttonNewPoll" (click)="newPoll()"> Créer un sondage </ion-button>
+    </div>
+
+
+  </div>
+</ion-content>

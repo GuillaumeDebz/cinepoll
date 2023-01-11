@@ -3,7 +3,23 @@
 </ion-header>
 
 <ion-content>
-  <p>poll</p>
+  <div class="content-inner">
+
+  
+    <!-- SONDAGES EN COURS  -->
+    <div>
+      <p>poll</p>
+    </div>
+
+
+    <!-- NOUVEAU SONDAGE  -->
+    <div class="newPoll">
+      <ion-icon class="newPollIcon" name="add-circle-outline" (click)="newPoll()"> </ion-icon>
+      <p class="newPollText"> Nouveau sondage </p>
+    </div>
+
+
+  </div>
 </ion-content>
 
 <ion-footer>

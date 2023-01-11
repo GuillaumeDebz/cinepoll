@@ -1,0 +1,39 @@
+// AJOUTER UN AMI //
+.addFriendText {
+    font-weight: bold;
+    text-align: center;
+    font-size: 4vh;
+    margin-top: 2vh;
+}
+
+// INPUT PSEUDO //
+.formAddFriend {
+    display: flex;
+    justify-content: center;
+}
+
+ion-item {
+    margin-top: 1vh;
+    margin-bottom: 6vh;
+    --border-style: none;
+}
+
+ion-input {
+    height: 10vh;
+    width: 38vh;
+    font-size: 3vh;
+    text-align: center;
+    border: 1px solid #53D2F2;
+}
+
+// BOUTON ENVOYER INVITATION //
+.buttonSendInvitation {
+    --background: #2CACDC;
+    height: 8vh;
+    width: 30vh;
+    margin: auto;
+    font-size: 2vh;
+    font-weight: bold;
+    text-transform: none;    // Enlever le uppercase
+    --border-radius: 5%;
+}

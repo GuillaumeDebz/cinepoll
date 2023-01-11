@@ -1,0 +1,26 @@
+// PAGE //
+.content-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+// AJOUTER AMI //
+.addFriend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addFriendIcon {
+    color: #53D2F2;
+    height: 5vh;
+    width: 5vh;
+    margin-right: 1vh;
+}
+
+.addFriendText {
+    font-size: 3vh;
+}

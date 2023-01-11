@@ -4,10 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FriendsPage } from './friends.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: FriendsPage
-  }
+  { path: '', component: FriendsPage },
+  { path: 'addFriend', loadChildren: () => import('./add-friend/add-friend.module').then( m => m.AddFriendPageModule) },
 ];
 
 @NgModule({

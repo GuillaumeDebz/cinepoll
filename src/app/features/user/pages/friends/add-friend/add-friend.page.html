@@ -1,0 +1,28 @@
+<ion-header>
+  <app-navbar-arrow> </app-navbar-arrow>
+</ion-header>
+
+<ion-content>
+
+  <!-- AJOUTER UN AMI  -->
+  <h2 class="addFriendText"> Ajouter un ami </h2>
+
+  <!-- FORM  -->
+  <form class="formAddFriend">
+    <ion-list>
+
+      <!-- PSEUDO  -->
+      <ion-item>
+        <ion-input placeholder="Pseudo"></ion-input>
+      </ion-item>
+
+      <!-- BOUTON ENVOYER INVITATION  -->
+      <ion-item>
+        <ion-button class="buttonSendInvitation" (click)="sendInvitation()"> Envoyer une invitation </ion-button>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+
+</ion-content>

@@ -8,15 +8,15 @@ import { Router } from '@angular/router';
 })
 export class NewAccountPage implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-    // CREER NOUVEAU COMPTE  //
-    creerCompte(){
-      this.router.navigate(['user']);
-    };
-    
+  // CREER NOUVEAU COMPTE  //
+  creerCompte() {
+    this.router.navigate(['user']);
+  };
+
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poll',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  // CREER NOUVEAU SONDAGE  //
+  newPoll() {
+    this.router.navigate(['user/poll/newPoll']);
+  };
 
 }

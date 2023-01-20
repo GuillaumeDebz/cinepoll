@@ -8,7 +8,7 @@
 
     
     <!-- FORM  -->
-    <form class="formAuth">
+    <form class="formAuth" [formGroup]="formLogin" (ngSubmit)="checkConnection()">
       <ion-list>
 
         <!-- EMAIL  -->
@@ -23,7 +23,7 @@
 
         <!-- CONNEXION  -->
         <ion-item>
-          <ion-button class="buttonConnexion" (click)="checkConnection()">Se connecter</ion-button>
+          <ion-button class="buttonConnexion" type="submit" (click)="checkConnection()">Se connecter</ion-button>
         </ion-item>
 
       </ion-list>

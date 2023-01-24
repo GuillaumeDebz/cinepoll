@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/features/authentification/services/login.service';
-import { LoginProperties } from './enum/login-properties';
+import { LoginProperties } from '../../core/models/enum/login-properties';
 
 
 @Component({
@@ -13,11 +13,14 @@ import { LoginProperties } from './enum/login-properties';
 export class AuthentificationPage implements OnInit {
 
 
-  // Création formulaire
+  // Création formulaire //
   public formLogin: FormGroup;
 
   // Enum//
   loginProperties = LoginProperties
+
+  // Message d'erreur Login //
+  errorMessage: string = ""
 
 
   // CONSTRUCTOR //
@@ -41,7 +44,7 @@ export class AuthentificationPage implements OnInit {
   // GENERATE FORM //
   public generateForm(): FormGroup {
     const formLogin = this.fb.group({
-      [LoginProperties.EMAIL]: [null, [Validators.required]],
+      [LoginProperties.EMAIL]: [null, [Validators.required, Validators.email]],
       [LoginProperties.PASSWORD]: [null, [Validators.required]]
     },)
     return formLogin;
@@ -49,13 +52,23 @@ export class AuthentificationPage implements OnInit {
 
 
   // CONNEXION  //
-  checkConnection() {
-    this.router.navigate(['user']);
-  };
+  public connexion() {
+    if (this.formLogin.valid) {
+      this.serviceLogin.login(
+        this.formLogin.value
+      ).subscribe({
+        next: token => {
+          this.router.navigate(['user']);
+        }, error: err => {
+          this.errorMessage = err.error
+        }
+      })
+    }
+  }
 
 
   // CREER NOUVEAU COMPTE  //
-  creerCompte() {
+  public creerCompte() {
     this.router.navigate(['newAccount']);
   };
 

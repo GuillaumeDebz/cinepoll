@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../authentification/services/login.service';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPage implements OnInit {
 
-  constructor() { }
+  // isConnect : boolean = false
+
+
+  constructor(
+    // private serviceLogin: LoginService
+  ) { }
+
 
   ngOnInit() {
+    // this.isConnect = this.serviceLogin.isConnect
   }
+
+
 
 }

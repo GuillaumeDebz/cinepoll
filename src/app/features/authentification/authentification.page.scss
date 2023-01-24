@@ -30,19 +30,23 @@
 ion-item {
     margin-top: 4vh;
     --border-style: none;
+    margin: 2;
+}
+
+.itemInput {
+    border: 0.2vh solid #53D2F2;
 }
 
 ion-input {
     height: 10vh;
-    width: 38vh;
+    width: 70vw;
     font-size: 4vh;
     text-align: center;
-    border: 0.2vh solid #53D2F2;
 }
 
 .buttonConnexion {
     height: 8vh;
-    width: 30vh;
+    width: 60vw;
     font-size: 3.5vh;
     font-weight: bold;
     text-transform: none;    // Enlever le uppercase
@@ -76,7 +80,7 @@ ion-input {
 .buttonCreerCompte {
     --background: #53D2F2;
     height: 8vh;
-    width: 38vh;
+    width: 85vw;
     font-size: 4vh;
     font-weight: bold;
     text-transform: none;    // Enlever le uppercase

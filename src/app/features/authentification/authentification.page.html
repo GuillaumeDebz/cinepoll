@@ -12,13 +12,16 @@
       <ion-list>
 
         <!-- EMAIL  -->
-        <ion-item>
+        <ion-item class="itemInput">
           <ion-input placeholder="Adresse email" [formControlName]="loginProperties.EMAIL"></ion-input>
         </ion-item>
 
         <!-- MOT DE PASSE  -->
-        <ion-item>
-          <ion-input placeholder="Mot de passe" [formControlName]="loginProperties.PASSWORD"></ion-input>
+        <ion-item class="itemInput">
+          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Mot de passe" [formControlName]="loginProperties.PASSWORD" >
+          </ion-input>
+            <ion-icon *ngIf="hide" name="eye-off-outline" (click)="hidePassword()"></ion-icon>
+            <ion-icon *ngIf="!hide" name="eye-outline" (click)="hidePassword()"></ion-icon>
         </ion-item>
 
         <!-- CONNEXION  -->

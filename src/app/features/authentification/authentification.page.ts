@@ -22,6 +22,9 @@ export class AuthentificationPage implements OnInit {
   // Message d'erreur Login //
   errorMessage: string = ""
 
+  // CACHER MOT DE PASSE //
+  hide: boolean = true
+
 
   // CONSTRUCTOR //
   constructor(
@@ -48,6 +51,12 @@ export class AuthentificationPage implements OnInit {
       [LoginProperties.PASSWORD]: [null, [Validators.required]]
     },)
     return formLogin;
+  }
+
+
+  // HIDE PASSWORD //
+  public hidePassword(){
+      this.hide = !this.hide
   }
 
 

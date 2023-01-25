@@ -16,14 +16,20 @@
 ion-item {
     margin-top: 4vh;
     --border-style: none;
+    
+}
+
+.itemInput {
+    border: 0.2vh solid #53D2F2;
+    margin-right: 3vw;
+    margin-left: 3vw;
 }
 
 ion-input {
     height: 10vh;
-    width: 38vh;
-    font-size: 3vh;
+    width: 70vw;
+    font-size: 3vmax;
     text-align: center;
-    border: 0.2vh solid #53D2F2;
 }
 
 .confirmChange {
@@ -38,13 +44,13 @@ ion-input {
 }
 
 .importText {
-    font-size: 3vh;
+    font-size: 3vmax;
 }
 
 .buttonConfirmer {
     --background: #2CACDC;
     height: 8vh;
-    width: 32vh;
+    width: 70vw;
     margin: auto;
     font-size: 2vh;
     font-weight: bold;
@@ -64,7 +70,7 @@ ion-input {
 .buttondeconnexion {
     --background: red;
     height: 8vh;
-    width: 20vh;
+    width: 35vw;
     font-size: 2vh;
     font-weight: bold;
     text-transform: none;    // Enlever le uppercase

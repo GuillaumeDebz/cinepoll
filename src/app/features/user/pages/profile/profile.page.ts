@@ -8,19 +8,32 @@ import { LogoutService } from '../../services/logout.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+  
+  // HIDE PASSWORD //
+  hide: boolean = true
 
+  
   constructor(
     private router: Router,
     private serviceLogout: LogoutService
-    ) { }
+  ) { }
+
 
   ngOnInit() {
   }
+
 
   // CONFIRMER LES CHANGEMENTS  //
   confirmChange() {
     this.router.navigate(['user/poll']);
   };
+
+
+  // HIDE PASSWORD (get hide status) //
+  public hidePassword(status: boolean) {
+    this.hide = status;
+  }
+
 
   // DECONNEXION  //
   deconnexion() {

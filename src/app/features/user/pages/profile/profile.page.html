@@ -11,18 +11,19 @@
       <ion-list>
 
         <!-- EMAIL  -->
-        <ion-item>
+        <ion-item class="itemInput">
           <ion-input placeholder="Adresse email"></ion-input>
         </ion-item>
 
         <!-- PSEUDO  -->
-        <ion-item>
+        <ion-item class="itemInput">
           <ion-input placeholder="Pseudo"></ion-input>
         </ion-item>
 
         <!-- MOT DE PASSE  -->
-        <ion-item>
-          <ion-input placeholder="Mot de passe"></ion-input>
+        <ion-item class="itemInput">
+          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Mot de passe"></ion-input>
+          <app-hide-password (hideStatus)="hidePassword($event)"></app-hide-password>
         </ion-item>
 
         <!-- CHANGER PHOTO  -->

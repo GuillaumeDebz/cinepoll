@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/features/authentification/services/login.service';
-import { LoginProperties } from '../../core/models/enum/login-properties';
+import { AccountProperties } from '../../core/models/enum/accountproperties';
 
 
 @Component({
@@ -12,17 +12,16 @@ import { LoginProperties } from '../../core/models/enum/login-properties';
 })
 export class AuthentificationPage implements OnInit {
 
-
   // Création formulaire //
   public formLogin: FormGroup;
 
-  // Enum//
-  loginProperties = LoginProperties
+  // Enum AccountProperties //
+  accountProperties = AccountProperties
 
   // Message d'erreur Login //
   errorMessage: string = ""
 
-  // CACHER MOT DE PASSE //
+  // HIDE PASSWORD //
   hide: boolean = true
 
 
@@ -30,33 +29,30 @@ export class AuthentificationPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private serviceLogin: LoginService
+    private serviceLogin: LoginService,
   ) {
     this.formLogin = this.generateForm();
   }
 
 
   // NGONINIT //
-  ngOnInit() {      // VOID OBLIGATOIRE ?
-    if (this.serviceLogin.isConnect) {
-      this.router.navigate(['user'])
-    };
+  ngOnInit() {
   };
 
 
   // GENERATE FORM //
   public generateForm(): FormGroup {
     const formLogin = this.fb.group({
-      [LoginProperties.EMAIL]: [null, [Validators.required, Validators.email]],
-      [LoginProperties.PASSWORD]: [null, [Validators.required]]
+      [AccountProperties.EMAIL]: [null, [Validators.required, Validators.email]],
+      [AccountProperties.PASSWORD]: [null, [Validators.required]]
     },)
     return formLogin;
-  }
+  };
 
 
-  // HIDE PASSWORD //
-  public hidePassword(){
-      this.hide = !this.hide
+  // HIDE PASSWORD (get hide status) //
+  public hidePassword(status: boolean) {
+    this.hide = status;
   }
 
 
@@ -73,7 +69,7 @@ export class AuthentificationPage implements OnInit {
         }
       })
     }
-  }
+  };
 
 
   // CREER NOUVEAU COMPTE  //

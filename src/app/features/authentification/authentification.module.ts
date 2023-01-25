@@ -9,6 +9,8 @@ import { AuthentificationPage } from './authentification.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+// COMPONENTS //
+import { ComponentsModule } from 'src/app/core/components/components.module';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonicModule,
     AuthentificationPageRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
   ],
   declarations: [AuthentificationPage]
 })

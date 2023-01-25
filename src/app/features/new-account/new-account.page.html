@@ -7,27 +7,28 @@
 
 
     <!-- FORM  -->
-    <form class="formAuth">
+    <form class="formRegister" [formGroup]="formRegister" (ngSubmit)="creerCompte()">
       <ion-list>
 
         <!-- EMAIL  -->
-        <ion-item>
-          <ion-input placeholder="Adresse email"></ion-input>
+        <ion-item class="itemInput">
+          <ion-input placeholder="Adresse email" [formControlName]="accountProperties.EMAIL"></ion-input>
         </ion-item>
 
         <!-- PSEUDO  -->
-        <ion-item>
-          <ion-input placeholder="Pseudo"></ion-input>
+        <ion-item class="itemInput">
+          <ion-input placeholder="Pseudo" [formControlName]="accountProperties.PSEUDO"></ion-input>
         </ion-item>
 
         <!-- MOT DE PASSE  -->
-        <ion-item>
-          <ion-input placeholder="Mot de passe"></ion-input>
+        <ion-item class="itemInput">
+          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Mot de passe" [formControlName]="accountProperties.PASSWORD"></ion-input>
+          <app-hide-password (hideStatus)="hidePassword($event)"></app-hide-password>
         </ion-item>
 
         <!-- CONFIRMER MOT DE PASSE  -->
-        <ion-item>
-          <ion-input placeholder="Confirmer Mot de passe"></ion-input>
+        <ion-item class="itemInput">
+          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Confirmer Mot de passe" [formControlName]="accountProperties.CONFIRMPASSWORD"></ion-input>
         </ion-item>
 
         <!-- IMPORTER PHOTO  -->
@@ -42,7 +43,7 @@
 
     <!-- BOUTON CREER COMPTE  -->
     <div class="creerCompte">
-      <ion-button class="buttonCreerCompte" (click)="creerCompte()"> Créer un compte </ion-button>
+      <ion-button class="buttonCreerCompte" type="submit" (click)="creerCompte()"> Créer un compte </ion-button>
     </div>
 
 

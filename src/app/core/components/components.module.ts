@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarArrowComponent } from './navbar-arrow/navbar-arrow.component';
 import { NavbarProfilePicComponent } from './navbar-profile-pic/navbar-profile-pic.component';
+import { HidePasswordComponent } from './hide-password/hide-password.component';
 
 
 
@@ -13,7 +14,8 @@ import { NavbarProfilePicComponent } from './navbar-profile-pic/navbar-profile-p
   declarations: [
     FooterComponent,
     NavbarArrowComponent,
-    NavbarProfilePicComponent
+    NavbarProfilePicComponent,
+    HidePasswordComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { NavbarProfilePicComponent } from './navbar-profile-pic/navbar-profile-p
   exports: [ 
     FooterComponent,
     NavbarArrowComponent,
-    NavbarProfilePicComponent
+    NavbarProfilePicComponent,
+    HidePasswordComponent
    ]
 })
 export class ComponentsModule { }

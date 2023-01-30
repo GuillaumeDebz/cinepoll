@@ -15,21 +15,86 @@
           <ion-input placeholder="Adresse email" [formControlName]="accountProperties.EMAIL"></ion-input>
         </ion-item>
 
+        <p class="errorMessage" *ngIf="(
+              formRegister.controls[accountProperties.EMAIL]?.dirty
+           || formRegister.controls[accountProperties.EMAIL]?.touched )
+           && formRegister.controls[accountProperties.EMAIL]?.errors?.['required']">
+          Email requis
+        </p>
+
+        <p class="errorMessage" *ngIf="(
+           formRegister.controls[accountProperties.EMAIL]?.dirty
+        || formRegister.controls[accountProperties.EMAIL]?.touched )
+        && formRegister.controls[accountProperties.EMAIL]?.errors?.['email']">
+          Email invalide
+        </p>
+
         <!-- PSEUDO  -->
         <ion-item class="itemInput">
           <ion-input placeholder="Pseudo" [formControlName]="accountProperties.PSEUDO"></ion-input>
         </ion-item>
 
+        <p class="errorMessage" *ngIf="(
+           formRegister.controls[accountProperties.PSEUDO]?.dirty
+        || formRegister.controls[accountProperties.PSEUDO]?.touched )
+        && formRegister.controls[accountProperties.PSEUDO]?.errors?.['required']">
+          Pseudo requis
+        </p>
+
+        <p class="errorMessage" *ngIf="(
+          formRegister.controls[accountProperties.PSEUDO]?.dirty
+       || formRegister.controls[accountProperties.PSEUDO]?.touched )
+       && formRegister.controls[accountProperties.PSEUDO]?.errors?.['minlength']">
+          Minimum {{ formRegister.controls[accountProperties.PSEUDO].errors?.['minlength'].requiredLength }} caractères
+        </p>
+
+
         <!-- MOT DE PASSE  -->
         <ion-item class="itemInput">
-          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Mot de passe" [formControlName]="accountProperties.PASSWORD"></ion-input>
+          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Mot de passe"
+            [formControlName]="accountProperties.PASSWORD"></ion-input>
           <app-hide-password (hideStatus)="hidePassword($event)"></app-hide-password>
         </ion-item>
 
+        <p class="errorMessage" *ngIf="(
+          formRegister.controls[accountProperties.PASSWORD]?.dirty
+       || formRegister.controls[accountProperties.PASSWORD]?.touched )
+       && formRegister.controls[accountProperties.PASSWORD]?.errors?.['required']">
+          Mot de passe requis
+        </p>
+
+        <p class="errorMessage" *ngIf="(
+          formRegister.controls[accountProperties.PASSWORD]?.dirty
+       || formRegister.controls[accountProperties.PASSWORD]?.touched )
+       && formRegister.controls[accountProperties.PASSWORD]?.errors?.['minlength']">
+          Minimum {{ formRegister.controls[accountProperties.PASSWORD].errors?.['minlength'].requiredLength }} caractères
+        </p>
+
+
         <!-- CONFIRMER MOT DE PASSE  -->
         <ion-item class="itemInput">
-          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Confirmer Mot de passe" [formControlName]="accountProperties.CONFIRMPASSWORD"></ion-input>
+          <ion-input [type]="hide ? 'password' : 'text'" placeholder="Confirmer Mot de passe"
+            [formControlName]="accountProperties.CONFIRMPASSWORD"></ion-input>
         </ion-item>
+
+        <p class="errorMessage" *ngIf="(
+          formRegister.controls[accountProperties.CONFIRMPASSWORD]?.dirty
+       || formRegister.controls[accountProperties.CONFIRMPASSWORD]?.touched )
+       && formRegister.controls[accountProperties.CONFIRMPASSWORD]?.errors?.['required']">
+          Confirmez le mot de passe
+        </p>
+
+        <p class="errorMessage" *ngIf="(
+          formRegister.controls[accountProperties.CONFIRMPASSWORD]?.dirty
+       || formRegister.controls[accountProperties.CONFIRMPASSWORD]?.touched )
+       && formRegister.controls[accountProperties.CONFIRMPASSWORD]?.errors?.['minlength']">
+          Minimum {{ formRegister.controls[accountProperties.CONFIRMPASSWORD].errors?.['minlength'].requiredLength }} caractères
+        </p>
+
+        <p class="errorMessage" *ngIf="formRegister.errors">
+          {{ formRegister.errors["MatchPassword"] }}
+          erreur
+        </p>
 
         <!-- IMPORTER PHOTO  -->
         <ion-item>
@@ -43,7 +108,8 @@
 
     <!-- BOUTON CREER COMPTE  -->
     <div class="creerCompte">
-      <ion-button class="buttonCreerCompte" type="submit" (click)="creerCompte()"> Créer un compte </ion-button>
+      <ion-button class="buttonCreerCompte" [disabled]="formRegister.invalid" type="submit"> Créer un compte
+      </ion-button>
     </div>
 
 

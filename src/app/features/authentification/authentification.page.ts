@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/features/authentification/services/login.service';
 import { AccountProperties } from '../../core/models/enum/accountproperties';
+import { Login } from 'src/app/core/models/interfaces/login';
 
 
 @Component({
@@ -58,10 +59,17 @@ export class AuthentificationPage implements OnInit {
 
   // CONNEXION  //
   public connexion() {
+
     if (this.formLogin.valid) {
-      this.serviceLogin.login(
-        this.formLogin.value
-      ).subscribe({
+
+      // Mapper //
+      const login: Login = {
+        email: this.formLogin.get(this.accountProperties.EMAIL)?.value,
+        password: this.formLogin.get(this.accountProperties.PASSWORD)?.value
+      }
+
+      this.serviceLogin.login(login).
+      subscribe({
         next: token => {
           this.router.navigate(['user']);
         }, error: err => {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Profile } from 'src/app/core/models/interfaces/profile';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Profile } from 'src/app/core/models/interfaces/profile';
 })
 export class RegisterService {
 
-  baseURL: string = "http://localhost:3000/";
+  baseURL: string = environment.baseURL;
 
   constructor(private http: HttpClient) { }
 

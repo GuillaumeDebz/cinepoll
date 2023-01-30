@@ -1,7 +1,7 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 export function matchPasswordValidator(controlGroup : AbstractControl){
-    
+
     let error : ValidationErrors | null = null
 
     if(controlGroup.value["password"] && controlGroup.value["confirmpassword"]){

@@ -29,6 +29,12 @@
           Email invalide
         </p>
 
+        <!-- ERREUR EMAIL DEJA EXISTANT -->
+        <p class="errorMessage" *ngIf="errorMessage && formRegister.controls[accountProperties.EMAIL]?.value">
+          {{ errorMessage }}
+        </p>
+
+
         <!-- PSEUDO  -->
         <ion-item class="itemInput">
           <ion-input placeholder="Pseudo" [formControlName]="accountProperties.PSEUDO"></ion-input>
@@ -67,7 +73,8 @@
           formRegister.controls[accountProperties.PASSWORD]?.dirty
        || formRegister.controls[accountProperties.PASSWORD]?.touched )
        && formRegister.controls[accountProperties.PASSWORD]?.errors?.['minlength']">
-          Minimum {{ formRegister.controls[accountProperties.PASSWORD].errors?.['minlength'].requiredLength }} caractères
+          Minimum {{ formRegister.controls[accountProperties.PASSWORD].errors?.['minlength'].requiredLength }}
+          caractères
         </p>
 
 
@@ -84,16 +91,10 @@
           Confirmez le mot de passe
         </p>
 
-        <p class="errorMessage" *ngIf="(
-          formRegister.controls[accountProperties.CONFIRMPASSWORD]?.dirty
-       || formRegister.controls[accountProperties.CONFIRMPASSWORD]?.touched )
-       && formRegister.controls[accountProperties.CONFIRMPASSWORD]?.errors?.['minlength']">
-          Minimum {{ formRegister.controls[accountProperties.CONFIRMPASSWORD].errors?.['minlength'].requiredLength }} caractères
-        </p>
-
         <p class="errorMessage" *ngIf="formRegister.errors">
           {{ formRegister.errors["MatchPassword"] }}
         </p>
+
 
         <!-- IMPORTER PHOTO  -->
         <ion-item>
@@ -101,15 +102,16 @@
           <p class="importText"> Importer une photo </p>
         </ion-item>
 
+
+        <!-- BOUTON CREER COMPTE  -->
+        <ion-item class="creerCompte">
+          <ion-button class="buttonCreerCompte" [disabled]="formRegister.invalid" type="submit"> Créer un compte
+          </ion-button>
+        </ion-item>
+
+
       </ion-list>
     </form>
-
-
-    <!-- BOUTON CREER COMPTE  -->
-    <div class="creerCompte">
-      <ion-button class="buttonCreerCompte" [disabled]="formRegister.invalid" type="submit"> Créer un compte
-      </ion-button>
-    </div>
 
 
   </div>

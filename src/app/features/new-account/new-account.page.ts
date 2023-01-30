@@ -65,7 +65,7 @@ export class NewAccountPage implements OnInit {
 
   // CREER NOUVEAU COMPTE  //
   public creerCompte() {
-
+    
     if (this.formRegister.valid) {
 
       // Mapper //
@@ -80,7 +80,7 @@ export class NewAccountPage implements OnInit {
         next: token => {
           this.router.navigate(['user']);
         }, error: err => {
-          this.errorMessage = err.error
+          this.errorMessage = err.error          
         }
       })
     }

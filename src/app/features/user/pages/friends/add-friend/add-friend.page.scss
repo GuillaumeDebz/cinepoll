@@ -14,7 +14,6 @@
 
 ion-item {
     margin-top: 1vh;
-    margin-bottom: 6vh;
     --border-style: none;
 }
 
@@ -26,14 +25,22 @@ ion-input {
     border: 0.2vh solid #53D2F2;
 }
 
+// MESSAGE D'ERREUR //
+.errorMessage {
+    color: #dc2cc5;
+    text-align: center;
+}
+
+
 // BOUTON ENVOYER INVITATION //
 .buttonSendInvitation {
     --background: #2CACDC;
     height: 8vh;
     width: 30vh;
     margin: auto;
+    margin-top: 6vh;
     font-size: 2vh;
     font-weight: bold;
-    text-transform: none;    // Enlever le uppercase
+    text-transform: none; // Enlever le uppercase
     --border-radius: 5%;
 }

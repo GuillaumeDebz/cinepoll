@@ -8,17 +8,24 @@
   <h2 class="addFriendText"> Ajouter un ami </h2>
 
   <!-- FORM  -->
-  <form class="formAddFriend">
+  <form class="formAddFriend" [formGroup]="formAddFriend" (ngSubmit)="sendInvitation()">
     <ion-list>
 
       <!-- PSEUDO  -->
       <ion-item>
-        <ion-input placeholder="Pseudo"></ion-input>
+        <ion-input placeholder="Pseudo" [formControlName]="accountProperties.PSEUDO"></ion-input>
       </ion-item>
+
+      <p class="errorMessage" *ngIf="(
+        formAddFriend.controls[accountProperties.PSEUDO]?.dirty
+     || formAddFriend.controls[accountProperties.PSEUDO]?.touched )
+     && formAddFriend.controls[accountProperties.PSEUDO]?.errors?.['required']">
+       Pseudo requis
+     </p>
 
       <!-- BOUTON ENVOYER INVITATION  -->
       <ion-item>
-        <ion-button class="buttonSendInvitation" (click)="sendInvitation()"> Envoyer une invitation </ion-button>
+        <ion-button class="buttonSendInvitation" [disabled]="formAddFriend.invalid" type="submit"> Envoyer une invitation </ion-button>
       </ion-item>
 
     </ion-list>

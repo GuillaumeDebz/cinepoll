@@ -29,11 +29,6 @@
           Email invalide
         </p>
 
-        <!-- ERREUR EMAIL DEJA EXISTANT -->
-        <p class="errorMessage" *ngIf="errorMessage && formRegister.controls[accountProperties.EMAIL]?.value">
-          {{ errorMessage }}
-        </p>
-
 
         <!-- PSEUDO  -->
         <ion-item class="itemInput">
@@ -52,6 +47,15 @@
        || formRegister.controls[accountProperties.PSEUDO]?.touched )
        && formRegister.controls[accountProperties.PSEUDO]?.errors?.['minlength']">
           Minimum {{ formRegister.controls[accountProperties.PSEUDO].errors?.['minlength'].requiredLength }} caractères
+        </p>
+
+        <!-- ERREUR EMAIL/PSEUDO DEJA EXISTANT -->
+        <p class="errorMessage" *ngIf="
+        errorMessage 
+        && formRegister.controls[accountProperties.EMAIL]?.value
+        || formRegister.controls[accountProperties.PSEUDO]?.value">
+
+          {{ errorMessage }}
         </p>
 
 

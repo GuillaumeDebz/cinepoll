@@ -7,7 +7,7 @@
 
 
     <!-- FORM  -->
-    <form class="formNewPoll">
+    <form class="formNewPoll" [formGroup]="formNewPoll" (ngSubmit)="newPoll()">
 
       <ion-list>
         <!-- NOUVEAU SONDAGE  -->
@@ -15,29 +15,46 @@
           <h2 class="newPollText"> Nouveau sondage </h2>
         </ion-item>
 
-        <!-- PSEUDO  -->
+        <!-- GENRE  -->
         <ion-item>
-          <ion-input placeholder="Genre"></ion-input>
+          <ion-input placeholder="Genre" [formControlName]="pollproperties.GENRE"></ion-input>
         </ion-item>
+
+        <p class="errorMessage" *ngIf="(
+          formNewPoll.controls[pollproperties.GENRE]?.dirty
+       || formNewPoll.controls[pollproperties.GENRE]?.touched )
+       && formNewPoll.controls[pollproperties.GENRE]?.errors?.['required']">
+          Genre requis
+        </p>
+
+        <p class="errorMessage" *ngIf="(
+          formNewPoll.controls[pollproperties.GENRE]?.dirty
+       || formNewPoll.controls[pollproperties.GENRE]?.touched )
+       && formNewPoll.controls[pollproperties.GENRE]?.errors?.['minlength']">
+          Minimum {{ formNewPoll.controls[pollproperties.GENRE].errors?.['minlength'].requiredLength }} caractères
+        </p>
 
         <!-- COMMENTAIRE  -->
         <ion-item>
-          <ion-input placeholder="Commentaire"></ion-input>
+          <ion-input placeholder="Commentaire" [formControlName]="pollproperties.COMMENT"></ion-input>
         </ion-item>
 
         <!-- FILMS/SERIES A EXCLURE  -->
         <ion-item>
-          <ion-input placeholder="Films/Séries à exclure"></ion-input>
+          <ion-input placeholder="Films/Séries à exclure" [formControlName]="pollproperties.EXCLUDED"></ion-input>
         </ion-item>
+
+        <!-- BOUTON CREER SONDAGE  -->
+        <div class="createNewPoll">
+          <ion-button class="buttonNewPoll" [disabled]="formNewPoll.invalid" type="submit"> Créer un sondage
+          </ion-button>
+        </div>
+
 
       </ion-list>
     </form>
 
 
-    <!-- BOUTON CREER SONDAGE  -->
-    <div class="createNewPoll">
-      <ion-button class="buttonNewPoll" (click)="newPoll()"> Créer un sondage </ion-button>
-    </div>
 
 
   </div>

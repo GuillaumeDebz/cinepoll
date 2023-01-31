@@ -70,9 +70,13 @@ export class AuthentificationPage implements OnInit {
 
       this.serviceLogin.login(login).
       subscribe({
-        next: token => {
+        next: (data: any) => {
+          console.log(data);
+          
+          localStorage.setItem('Token', data.token)
           this.router.navigate(['user']);
-        }, error: err => {
+        }, 
+        error: err => {
           this.errorMessage = err.error
         }
       })

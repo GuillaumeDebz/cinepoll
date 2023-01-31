@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Friend } from 'src/app/core/models/interfaces/friend';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -13,9 +14,9 @@ export class AddfriendService {
   constructor( private http: HttpClient) { }
 
     // ADD FRIEND  //
-    // addFriend (value: Profile): Observable<{ token: string }> {
+    addFriend (pseudo: Friend): Observable<{ pseudo: string }> {
 
-    //   return this.http.post<{ pseudo: string }>(this.baseURL + "friends/addFriend", value)
-    // };
+      return this.http.patch<{ pseudo: string }>(this.baseURL + "user/addFriend", { pseudo})
+    };
 
 }

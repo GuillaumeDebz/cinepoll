@@ -17,6 +17,8 @@ export class AddFriendPage implements OnInit {
   // Enum AccountProperties //
   accountProperties = AccountProperties;
 
+   // Message d'erreur //
+   errorMessage: string = "";
 
   constructor(
     private router: Router,
@@ -42,6 +44,16 @@ export class AddFriendPage implements OnInit {
 
   // AJOUTER UN AMI  //
   sendInvitation() {
-    this.router.navigate(['user/friends']);
-  };
+    const pseudo = this.formAddFriend.get(AccountProperties.PSEUDO)?.value
+
+    this.serviceAddFriend.addFriend(pseudo)
+    .subscribe({
+      next: () => {
+        this.router.navigate(['user/friends']);
+
+      }, error: err => {        
+        this.errorMessage = err.error          
+      }
+    })
+  }
 }

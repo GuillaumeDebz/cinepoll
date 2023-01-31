@@ -19,7 +19,7 @@ export class NewAccountPage implements OnInit {
   // Enum AccountProperties //
   accountProperties = AccountProperties;
 
-  // Message d'erreur Login //
+  // Message d'erreur //
   errorMessage: string = "";
 
   // HIDE PASSWORD //

@@ -20,12 +20,21 @@
         formAddFriend.controls[accountProperties.PSEUDO]?.dirty
      || formAddFriend.controls[accountProperties.PSEUDO]?.touched )
      && formAddFriend.controls[accountProperties.PSEUDO]?.errors?.['required']">
-       Pseudo requis
-     </p>
+        Pseudo requis
+      </p>
+
+      <!-- ERREUR PSEUDO INVALIDE -->
+      <p class="errorMessage" *ngIf="
+          errorMessage 
+          && formAddFriend.controls[accountProperties.PSEUDO]?.value">
+
+        {{ errorMessage }}
+      </p>
 
       <!-- BOUTON ENVOYER INVITATION  -->
       <ion-item>
-        <ion-button class="buttonSendInvitation" [disabled]="formAddFriend.invalid" type="submit"> Envoyer une invitation </ion-button>
+        <ion-button class="buttonSendInvitation" [disabled]="formAddFriend.invalid" type="submit"> Envoyer une
+          invitation </ion-button>
       </ion-item>
 
     </ion-list>

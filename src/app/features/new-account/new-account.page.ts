@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AccountProperties } from 'src/app/core/models/enum/accountproperties';
 import { Profile } from 'src/app/core/models/interfaces/profile';
+import { TokenService } from 'src/app/core/services/token.service';
 import { RegisterService } from './services/register.service';
 import { matchPasswordValidator } from './validators/matchPassword.validator';
 
@@ -29,8 +29,8 @@ export class NewAccountPage implements OnInit {
   // CONSTRUCTOR //
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private serviceRegister: RegisterService
+    private serviceRegister: RegisterService,
+    private serviceToken: TokenService
   ) {
     this.formRegister = this.generateForm();
   };
@@ -77,9 +77,11 @@ export class NewAccountPage implements OnInit {
 
       this.serviceRegister.register(profile)
       .subscribe({
-        next: token => {
-          this.router.navigate(['user']);
-        }, error: err => {
+        next: (data: any) => {
+          this.serviceToken.setToken(data.token)
+          this.formRegister.reset()
+        }, 
+        error: err => {
           this.errorMessage = err.error          
         }
       })

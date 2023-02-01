@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogoutService } from '../../services/logout.service';
+import { TokenService } from 'src/app/core/services/token.service';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +15,7 @@ export class ProfilePage implements OnInit {
   
   constructor(
     private router: Router,
-    private serviceLogout: LogoutService
+    private serviceToken: TokenService
   ) { }
 
 
@@ -37,6 +37,6 @@ export class ProfilePage implements OnInit {
 
   // DECONNEXION  //
   deconnexion() {
-    this.serviceLogout.logout();
+    this.serviceToken.clearToken();
   };
 }

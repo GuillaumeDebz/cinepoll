@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/features/authentification/services/login.service';
 import { AccountProperties } from '../../core/models/enum/accountproperties';
 import { Login } from 'src/app/core/models/interfaces/login';
+import { TokenService } from 'src/app/core/services/token.service';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class AuthentificationPage implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private serviceLogin: LoginService,
+    private serviceToken: TokenService
   ) {
     this.formLogin = this.generateForm();
   }
@@ -71,10 +73,8 @@ export class AuthentificationPage implements OnInit {
       this.serviceLogin.login(login).
       subscribe({
         next: (data: any) => {
-          console.log(data);
-          
-          localStorage.setItem('Token', data.token)
-          this.router.navigate(['user']);
+          this.serviceToken.setToken(data.token)
+          this.formLogin.reset()
         }, 
         error: err => {
           this.errorMessage = err.error

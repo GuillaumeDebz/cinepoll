@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, tap } from 'rxjs';
+import { Friend } from 'src/app/core/models/interfaces/friend';
+import { FriendsListService } from './services/friends-list.service';
 
 @Component({
   selector: 'app-friends',
@@ -8,11 +11,23 @@ import { Router } from '@angular/router';
 })
 export class FriendsPage implements OnInit {
 
-  constructor(private router: Router) { }
+
+  // RECUPRER FRIENDS LIST //
+  friendsList$: Observable<Friend[]>;
+
+
+  constructor(
+    private router: Router,
+    private serviceFriendsList: FriendsListService
+    ) {
+      this.friendsList$ = this.serviceFriendsList.getFriendsList()
+     }
 
   ngOnInit() {
+    
   }
 
+  
   // AJOUTER UN AMI  //
   addFriend() {
     this.router.navigate(['user/friends/addFriend']);

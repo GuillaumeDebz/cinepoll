@@ -7,6 +7,13 @@
 }
 
 
+// LISTE D'AMIS //
+ul li {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+
 // AJOUTER AMI //
 .addFriend {
     display: flex;

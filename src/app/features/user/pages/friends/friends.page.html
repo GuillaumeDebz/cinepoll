@@ -7,9 +7,14 @@
 
   
     <!-- LISTE D'AMIS  -->
-    <div>
-      <p>friends</p>
-    </div>
+    <ul *ngIf="friendsList$ | async as friendsList">
+
+      <li *ngFor="let friend of friendsList"> 
+        <ion-icon name="person-circle-outline"></ion-icon>
+        {{friend }} 
+      </li>
+
+    </ul>  
 
 
     <!-- NOUVEAU SONDAGE  -->

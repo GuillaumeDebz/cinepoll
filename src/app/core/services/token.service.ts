@@ -10,7 +10,12 @@ export class TokenService {
   isConnect: boolean = false
 
 
-  constructor( private router: Router) { }
+  constructor( private router: Router) {
+    
+    if (localStorage.getItem('token')) {
+      this.isConnect = true;
+    }
+   }
 
 
   setToken(token: string): void {
@@ -21,6 +26,7 @@ export class TokenService {
 
 
   getToken(): string | null {
+    this.isConnect = true;
     return localStorage.getItem('token')
   }
 

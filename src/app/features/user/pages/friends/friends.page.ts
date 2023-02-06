@@ -26,8 +26,14 @@ export class FriendsPage implements OnInit {
      }
 
   ngOnInit() {
+
   }
   
+  // VERIFICATION SI MAJ FRIENDLIST //
+  ionViewDidEnter() {
+    this.friendsList$ = this.serviceFriendsList.getFriendsList()
+  }
+
 
   // AJOUTER UN AMI  //
   addFriend() {

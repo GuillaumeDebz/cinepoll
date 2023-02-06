@@ -49,8 +49,7 @@ export class AddFriendPage implements OnInit {
     this.serviceAddFriend.addFriend(pseudo)
     .subscribe({
       next: () => {
-        window.location.href="user/friends"   // Forcer à recharger le compo (sinon a besoin d'avoir le user chargé vu que add user = enfant)
-
+        this.router.navigate(['user/friends']);
       }, error: err => {        
         this.errorMessage = err.error          
       }

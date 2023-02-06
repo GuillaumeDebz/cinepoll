@@ -43,13 +43,13 @@ export class AddFriendPage implements OnInit {
 
 
   // AJOUTER UN AMI  //
-  sendInvitation() {
+  addFriend() {
     const pseudo = this.formAddFriend.get(AccountProperties.PSEUDO)?.value
 
     this.serviceAddFriend.addFriend(pseudo)
     .subscribe({
       next: () => {
-        this.router.navigate(['user/friends']);
+        window.location.href="user/friends"   // Forcer à recharger le compo (sinon a besoin d'avoir le user chargé vu que add user = enfant)
 
       }, error: err => {        
         this.errorMessage = err.error          

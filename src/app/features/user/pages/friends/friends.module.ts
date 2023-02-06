@@ -16,8 +16,10 @@ import { ComponentsModule } from 'src/app/core/components/components.module';
     FormsModule,
     IonicModule,
     FriendsPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
-  declarations: [FriendsPage]
+  declarations: [
+    FriendsPage
+]
 })
 export class FriendsPageModule {}

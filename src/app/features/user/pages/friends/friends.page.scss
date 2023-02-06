@@ -9,10 +9,19 @@
 
 // LISTE D'AMIS //
 ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     list-style-type: none;
     font-weight: bold;
+    font-size: 3vh;
+    margin-bottom: 2vh;
 }
 
+ion-icon {
+    font-size: 5vh;
+    color: #53D2F2;
+}
 
 // AJOUTER AMI //
 .addFriend {

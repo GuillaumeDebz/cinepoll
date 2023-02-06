@@ -6,10 +6,15 @@ import { Router } from '@angular/router';
 })
 export class TokenService {
 
+  // CONNECTE //
+  isConnect: boolean = false
+
+
   constructor( private router: Router) { }
 
 
   setToken(token: string): void {
+    this.isConnect = true;
     localStorage.setItem('token', token)
     this.router.navigate(['user']);
   }
@@ -21,6 +26,7 @@ export class TokenService {
 
 
   clearToken(): void {
+    this.isConnect = false;
     localStorage.removeItem('token')
     this.router.navigate(["authentification"])
   }
